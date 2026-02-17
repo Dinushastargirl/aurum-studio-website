@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TEAM } from '../constants';
@@ -22,7 +21,7 @@ const Team: React.FC = () => {
             viewport={{ once: true }}
             className="text-4xl font-serif text-white"
           >
-            Meet Our Master Stylists
+            Meet Our Master Artists
           </motion.h3>
         </div>
 
@@ -51,7 +50,7 @@ const Team: React.FC = () => {
                   </p>
                   <div className="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <a href="#" className="text-white hover:text-aurum-blue"><i className="fab fa-instagram text-xl"></i></a>
-                    <a href="#" className="text-white hover:text-aurum-blue"><i className="fab fa-linkedin-in text-xl"></i></a>
+                    <a href="#" className="text-white hover:text-aurum-blue"><i className="fab fa-whatsapp text-xl"></i></a>
                   </div>
                 </div>
               </div>

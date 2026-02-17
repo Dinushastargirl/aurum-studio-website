@@ -1,4 +1,3 @@
-
 import { NavItem, TeamMember, GalleryItem, BlogPost, GoogleReview } from './types';
 
 export const NAV_ITEMS: NavItem[] = [
@@ -31,70 +30,70 @@ export const IMAGES = {
 };
 
 export const TEAM: TeamMember[] = [
-  { name: 'Nilusha', role: 'Hair Stylist', image: IMAGES.TEAM_NILUSHA },
-  { name: 'Rohan', role: 'Beautician', image: IMAGES.TEAM_ROHAN }
+  { name: 'Nilusha', role: 'Master Hair Stylist', image: IMAGES.TEAM_NILUSHA },
+  { name: 'Rohan', role: 'Advanced Skin & Nail Expert', image: IMAGES.TEAM_ROHAN }
 ];
 
 export const SERVICES = [
   {
-    title: 'Hair Color',
+    title: 'Advanced Hair Artistry',
     icon: 'fa-palette',
-    description: 'Expert balayage, highlights, and full transformations.',
-    price: 'From $120'
+    description: 'Bespoke coloring, precision cuts, and bridal transformations.',
+    price: 'LKR 4,500+'
   },
   {
-    title: 'Hair Treatment',
-    icon: 'fa-magic',
-    description: 'Keratin, deep conditioning, and scalp therapy.',
-    price: 'From $80'
-  },
-  {
-    title: 'Facials',
+    title: 'Clinical Skincare',
     icon: 'fa-spa',
-    description: 'Bespoke skin rituals for a radiant glow.',
-    price: 'From $95'
+    description: 'Total facial rituals, acne treatments, and rejuvenation.',
+    price: 'LKR 7,500+'
   },
   {
-    title: 'Mani & Pedi',
+    title: 'Luxury Nail Spa',
     icon: 'fa-hand-sparkles',
-    description: 'Luxury nail care and aesthetic treatments.',
-    price: 'From $45'
+    description: 'Gel artistry, restorative manicures, and pedicures.',
+    price: 'LKR 2,500+'
+  },
+  {
+    title: 'Grooming & Waxing',
+    icon: 'fa-magic',
+    description: 'Precision threading, waxing, and full-body grooming.',
+    price: 'LKR 1,000+'
   }
 ];
 
 export const GALLERY_ITEMS: GalleryItem[] = IMAGES.GALLERY.map((url, index) => ({
   id: index,
   url,
-  alt: `Aurum Studio Transformation ${index + 1}`
+  alt: `Aurum Studio Total Beauty Transformation ${index + 1}`
 }));
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 1,
-    title: 'Top Hair Color Trends for 2024',
-    excerpt: 'Discover the most popular colors and techniques for the new year.',
+    title: 'Hair & Skin Trends in Sri Lanka 2024',
+    excerpt: 'Discover the most popular beauty rituals specifically curated for the tropical climate.',
     date: 'Oct 15, 2024',
-    category: 'Styling',
+    category: 'Lifestyle',
     image: IMAGES.GALLERY[0],
-    content: 'Long form content about hair color trends...'
+    content: 'Long form content about total beauty trends...'
   },
   {
     id: 2,
-    title: 'Essential Summer Hair Care',
-    excerpt: 'How to protect your hair from sun and sea during the holidays.',
+    title: 'Caring for Your Skin Post-Treatment',
+    excerpt: 'How to maintain that Aurum glow after your clinical facial.',
     date: 'Sep 28, 2024',
-    category: 'Care',
+    category: 'Skincare',
     image: IMAGES.GALLERY[1],
-    content: 'Detailed tips on summer hair protection...'
+    content: 'Detailed tips on post-facial skincare...'
   },
   {
     id: 3,
-    title: 'The Secret to Radiant Skin',
-    excerpt: 'Our master beautician shares her daily routine for perfect skin.',
+    title: 'The Secret to Stronger Nails',
+    excerpt: 'Our nail experts share their daily routine for long-lasting gel wear.',
     date: 'Sep 10, 2024',
-    category: 'Beauty',
+    category: 'Nails',
     image: IMAGES.GALLERY[2],
-    content: 'Professional skin care routine advice...'
+    content: 'Professional nail care advice...'
   }
 ];
 
@@ -103,21 +102,21 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     id: 1,
     author: 'Dilshan Perera',
     rating: 5,
-    text: 'Best salon in Rajagiriya! Nilusha did an amazing job with my hair cut. Very professional service.',
+    text: 'Best total beauty studio in Rajagiriya! Nilusha did an amazing job with my hair, and the skin treatment was top-notch.',
     time: '2 days ago'
   },
   {
     id: 2,
     author: 'Amanda Silva',
     rating: 5,
-    text: 'Aurum Studio is pure luxury. The facial treatment was so relaxing. Highly recommended!',
+    text: 'Aurum Studio is pure luxury. It is a one-stop-shop for my hair, nails, and facials. Highly recommended!',
     time: '1 week ago'
   },
   {
     id: 3,
     author: 'Kasun Rathnayake',
     rating: 5,
-    text: 'Great atmosphere and friendly staff. Rohan is a master beautician. Will definitely come back.',
+    text: 'Great atmosphere and friendly staff. Rohan is a master beautician for both skin and nails.',
     time: '3 weeks ago'
   }
 ];

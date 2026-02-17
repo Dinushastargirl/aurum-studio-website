@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { IMAGES } from '../constants';
@@ -19,14 +18,14 @@ const About: React.FC = () => {
             <div className="pt-12">
               <img 
                 src={IMAGES.ABOUT_1} 
-                alt="Salon Interior" 
+                alt="Total Beauty Interior" 
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover border border-aurum-blue/10"
               />
             </div>
             <div>
               <img 
                 src={IMAGES.ABOUT_2} 
-                alt="Hair Styling" 
+                alt="Skincare Rituals" 
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover border border-aurum-gold/10"
               />
             </div>
@@ -44,17 +43,17 @@ const About: React.FC = () => {
           >
             <h2 className="text-aurum-gold font-medium tracking-widest uppercase text-sm">Our Philosophy</h2>
             <h3 className="text-4xl md:text-5xl font-serif text-white leading-tight">
-              The Gold Standard <br /> of <span className="text-aurum-blue">Personalized Beauty</span>
+              Sri Lanka's Destination for <br /> <span className="text-aurum-blue">Total Artistic Beauty</span>
             </h3>
             <p className="text-gray-400 font-light text-lg leading-relaxed">
-              Founded on the principles of precision and artistry, Aurum Studio isn't just a salon; it's a sanctuary for self-expression. We blend contemporary trends with timeless techniques to ensure every client leaves feeling like their best self.
+              Founded on the principles of precision and holistic artistry, Aurum Studio isn't just a salon—it's Rajagiriya's premier sanctuary for total self-expression. We provide a comprehensive range of premium services covering hair, skin, and nail health.
             </p>
             <ul className="space-y-4 pt-4">
               {[
-                "Bespoke Hair Color Transformations",
-                "Advanced Precision Cutting Techniques",
-                "Luxury Hair & Scalp Rituals",
-                "Personalized Style Consultation"
+                "Bespoke Total Hair Transformations",
+                "Advanced Clinical Skincare & Facials",
+                "Luxury Nail Artistry & Spa Care",
+                "Full-Body Grooming & Waxing Services"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center text-gray-300">
                   <span className="w-2 h-2 bg-aurum-gold rounded-full mr-4" />
@@ -64,7 +63,7 @@ const About: React.FC = () => {
             </ul>
             <div className="pt-8">
               <button className="group flex items-center text-aurum-gold font-bold text-lg hover:text-aurum-blue transition-colors">
-                LEARN MORE ABOUT US
+                LEARN MORE ABOUT OUR CRAFT
                 <i className="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
               </button>
             </div>
