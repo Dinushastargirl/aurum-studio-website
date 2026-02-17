@@ -1,18 +1,18 @@
-
 import React from 'react';
+import NextImage from 'next/image';
 
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ImageProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'width' | 'height' | 'src'> {
   src: string;
   alt: string;
-  width?: number | string;
-  height?: number | string;
+  width?: number;
+  height?: number;
   className?: string;
   priority?: boolean;
 }
 
 /**
- * A Next.js-like Image component for use in standard React environments.
- * Handles the ImgBB direct link resolution and provides basic optimization attributes.
+ * High-performance Image component utilizing Next.js built-in optimization.
+ * Correctly handles ImgBB URLs with domain-level optimization.
  */
 const Image: React.FC<ImageProps> = ({ 
   src, 
@@ -23,22 +23,30 @@ const Image: React.FC<ImageProps> = ({
   priority,
   ...props 
 }) => {
+  // Use 'fill' if dimensions are omitted to ensure responsive coverage
+  if (!width || !height) {
+    return (
+      <div className={`relative w-full h-full overflow-hidden ${className}`}>
+        <NextImage
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          priority={priority}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+    );
+  }
+
   return (
-    <img
+    <NextImage
       src={src}
       alt={alt}
       width={width}
       height={height}
       className={className}
-      loading={priority ? 'eager' : 'lazy'}
-      referrerPolicy="no-referrer"
-      {...props}
-      style={{
-        ...props.style,
-        display: 'block',
-        maxWidth: '100%',
-        height: height ? height : 'auto',
-      }}
+      priority={priority}
     />
   );
 };
