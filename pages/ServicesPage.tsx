@@ -4,72 +4,58 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MEMBERSHIP_PACKAGES = [
-  { name: 'Ladies Membership', details: 'Blow Dry + Trim', prices: ['3M: 10,000', '6M: 20,000', '12M: 30,000'], icon: 'fa-venus' },
-  { name: 'Gents Membership', details: 'Hair Cut + Beard', prices: ['3M: 10,000', '6M: 20,000', '12M: 30,000'], icon: 'fa-mars' },
-  { name: 'Root Colour Add-on', details: 'Membership Extra', prices: ['3M: +10,000', '6M: +20,000', '12M: +30,000'], icon: 'fa-paint-brush' },
+  { name: 'Ladies Membership', details: 'Unlimited Blow Dry + Trim', prices: ['3M: 10,000', '6M: 20,000', '12M: 30,000'], icon: 'fa-venus' },
+  { name: 'Gents Membership', details: 'Unlimited Hair Cut + Beard', prices: ['3M: 10,000', '6M: 20,000', '12M: 30,000'], icon: 'fa-mars' },
+  { name: 'Skin & Nail Add-on', details: 'Monthly Luxury Ritual', prices: ['3M: +15,000', '6M: +25,000', '12M: +40,000'], icon: 'fa-sparkles' },
 ];
 
 const SERVICE_GROUPS = [
   {
-    category: 'Hair Styling & Cuts',
+    category: 'Hair Artistry',
     items: [
-      { name: 'Ladies Hair Cut', price: '4,500', member: 'FREE' },
-      { name: 'Ladies Trim', price: '2,500', member: 'FREE' },
-      { name: 'Gents Hair Cut', price: '2,000', member: 'FREE' },
-      { name: 'Gents Beard', price: '1,000', member: 'FREE' },
-      { name: 'Blow Dry (Long)', price: '4,000', member: 'FREE' },
-    ]
-  },
-  {
-    category: 'Technical Colour',
-    items: [
+      { name: 'Ladies Signature Cut', price: '4,500', member: 'FREE' },
+      { name: 'Gents Precision Cut', price: '2,000', member: 'FREE' },
       { name: 'Fashion Colour (Long)', price: '11,500', member: '9,200' },
-      { name: 'Balayage / Ombre', price: '30,000', member: '24,000' },
-      { name: 'Full Grey Cover 1"+', price: '5,500', member: '4,400' },
-      { name: 'Ladies Grey Hair 1"', price: '4,000', member: '3,200' },
+      { name: 'Balayage / Ombre Art', price: '30,000', member: '24,000' },
+      { name: 'Keratin Smoothing', price: '25,000', member: '20,000' },
     ]
   },
   {
-    category: 'Keratin & Treatments',
+    category: 'Clinical Skincare',
     items: [
-      { name: 'Keratin / Botox (Long)', price: '25,000', member: '20,000' },
-      { name: 'Spa Conditioning', price: '3,500', member: '2,800' },
-      { name: 'Mask Conditioning', price: '3,500', member: '2,800' },
-      { name: 'Oil Only (w/ Steam)', price: '2,000', member: '1,500' },
+      { name: 'Aurum Signature Facial', price: '12,500', member: '10,000' },
+      { name: 'Advanced Acne Therapy', price: '10,000', member: '8,000' },
+      { name: 'Deep Sea Rejuvenation', price: '15,000', member: '12,000' },
+      { name: 'Skin Brightening Ritual', price: '9,500', member: '7,600' },
     ]
   },
   {
-    category: 'Facials & Skin',
+    category: 'Nail Artistry',
     items: [
-      { name: 'Basic Facial', price: '7,500', member: '6,000' },
-      { name: 'Acne / Lightening', price: '10,000', member: '8,000' },
+      { name: 'Luxury Gel Pedicure', price: '5,000', member: '4,000' },
+      { name: 'Signature Gel Manicure', price: '4,500', member: '3,600' },
+      { name: 'Nail Art (Per Nail)', price: '500', member: '400' },
+      { name: 'Paraffin Wax Treatment', price: '2,500', member: '2,000' },
+    ]
+  },
+  {
+    category: 'Grooming & Waxing',
+    items: [
       { name: 'Full Face Threading', price: '2,000', member: 'FREE' },
       { name: 'Full Leg Wax', price: '5,000', member: '4,000' },
+      { name: 'Underarm Ritual', price: '1,500', member: '1,200' },
+      { name: 'Full Body Grooming', price: '18,000', member: '14,400' },
     ]
   },
   {
-    category: 'Mani & Pedi',
+    category: 'Bridal & Special Occasion',
     items: [
-      { name: 'Ladies Gel Pedicure', price: '5,000', member: '4,000' },
-      { name: 'Ladies Gel Manicure', price: '4,500', member: '3,600' },
-      { name: 'Gents Pedicure', price: '3,500', member: '2,800' },
-      { name: 'Gents Manicure', price: '2,500', member: '2,000' },
-    ]
-  },
-  {
-    category: 'Special Dressing',
-    items: [
-      { name: 'Full Dressing', price: '10,000', member: '8,000' },
-      { name: 'Hair Style', price: '4,000', member: '3,200' },
-      { name: 'Saree Drape', price: '2,000', member: '1,600' },
+      { name: 'Total Bridal Dressing', price: '45,000', member: '40,000' },
+      { name: 'Evening Event Look', price: '10,000', member: '8,000' },
+      { name: 'Saree Draping Art', price: '2,500', member: '2,000' },
+      { name: 'Creative Hair Styling', price: '4,000', member: '3,200' },
     ]
   }
-];
-
-const PACKAGES = [
-  { name: 'Ladies Package', items: 'Cut + Threading + Basic Facial + Mani + Pedi', price: '16,000' },
-  { name: 'Gents Package', items: 'Cut + Beard + Basic Facial + Mani + Pedi', price: '14,000' },
-  { name: 'Group for 4 People', items: 'Exclusive Studio Access', price: '50,000' },
 ];
 
 const ServicesPage: React.FC = () => {
@@ -84,15 +70,15 @@ const ServicesPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-serif text-white mb-6 italic"
           >
-            The Service Menu
+            Total Beauty Rituals
           </motion.h1>
-          <p className="text-aurum-gold font-bold tracking-[0.4em] uppercase text-xs">Beyond the Chair: Quality rituals</p>
+          <p className="text-aurum-gold font-bold tracking-[0.4em] uppercase text-xs">Excellence in Hair, Skin & Nails in Sri Lanka</p>
         </div>
 
         {/* Membership Section */}
         <section className="mb-32">
           <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-3xl font-serif text-white italic">Become a Member</h2>
+            <h2 className="text-3xl font-serif text-white italic">The Aurum Membership</h2>
             <div className="h-px flex-grow bg-aurum-gold/20" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -146,7 +132,7 @@ const ServicesPage: React.FC = () => {
                         </span>
                       </div>
                     </div>
-                    <p className="text-[10px] text-gray-500 uppercase tracking-widest">Standard vs Member Rate</p>
+                    <p className="text-[10px] text-gray-500 uppercase tracking-widest">Standard Rate vs Member Privilege</p>
                   </div>
                 ))}
               </div>
@@ -154,39 +140,16 @@ const ServicesPage: React.FC = () => {
           ))}
         </div>
 
-        {/* Special Packages Section */}
-        <section className="mb-32">
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-3xl font-serif text-white italic">Value Packages</h2>
-            <div className="h-px flex-grow bg-aurum-gold/20" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {PACKAGES.map((pkg, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-aurum-dark border border-aurum-blue/30 p-10 rounded-3xl text-center space-y-6 hover:border-aurum-gold transition-colors"
-              >
-                <h3 className="text-2xl font-serif text-white italic">{pkg.name}</h3>
-                <p className="text-gray-400 text-sm font-light leading-relaxed">{pkg.items}</p>
-                <div className="pt-4">
-                  <span className="text-aurum-gold text-2xl font-serif italic">LKR {pkg.price}</span>
-                </div>
-                <button className="w-full bg-aurum-blue text-white py-3 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase">Book Package</button>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
         {/* Fine Print */}
         <div className="p-12 rounded-3xl bg-white/5 border border-white/10 text-center space-y-6 max-w-3xl mx-auto">
-          <h3 className="text-xl font-serif text-white italic">Important Note</h3>
+          <h3 className="text-xl font-serif text-white italic">Your Sanctuary in Rajagiriya</h3>
           <p className="text-gray-400 text-sm font-light italic">
-            *Prices may change according to hair density and brand of products used. <br />
-            Members enjoy special "Free" status for specific recurring services as part of their selected plan.
+            *All chemical services include a detailed consultation. Prices may vary depending on hair density and the premium brands selected for your treatment. 
+            Members receive priority booking and exclusive access to new product launches.
           </p>
           <div className="flex justify-center gap-4">
              <button className="bg-aurum-gold text-aurum-dark px-10 py-4 rounded-full font-bold tracking-widest text-[10px] uppercase shadow-xl hover:scale-105 transition-transform">
-              Contact 071-222-9182
+              Call Rajagiriya: 071-222-9182
             </button>
           </div>
         </div>
