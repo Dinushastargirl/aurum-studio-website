@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -27,15 +28,15 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="text-aurum-gold font-medium tracking-[0.3em] uppercase mb-4 block">
-              Luxury Hair Salon
+              Luxury Total Beauty Studio
             </span>
             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
               Premium <br />
-              <span className="text-aurum-blue">Hair Styling</span> <br />
-              in New York
+              <span className="text-aurum-blue">Artistic Services</span> <br />
+              in Sri Lanka
             </h1>
             <p className="text-lg text-gray-300 mb-8 max-w-lg font-light leading-relaxed">
-              Experience professional hair care and modern styling. Our experts help you find your best look.
+              Experience world-class hair, skin, and nail care. Our experts specialize in high-end transformations tailored to your unique style.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-aurum-gold hover:bg-aurum-gold/80 text-aurum-dark px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-xl text-sm tracking-widest uppercase">

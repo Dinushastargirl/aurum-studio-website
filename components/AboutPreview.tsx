@@ -1,3 +1,4 @@
+"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -36,10 +37,10 @@ const AboutPreview: React.FC<AboutPreviewProps> = ({ onNavigate }) => {
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight">
-              A luxury salon for <span className="text-aurum-blue">modern hair styling</span>.
+              A luxury studio for <span className="text-aurum-blue">total beauty services</span>.
             </h2>
             <p className="text-gray-400 text-lg font-light leading-relaxed">
-              AURUM STUDIO is a high-end salon in New York. We provide premium hair and beauty services. Our team focus on quality and personal style for every client.
+              AURUM STUDIO is a high-end total beauty destination in Rajagiriya. We provide premium hair, skin, and nail services. Our team focus on quality and personal style for every client.
             </p>
             <button 
               onClick={() => onNavigate('about')}
