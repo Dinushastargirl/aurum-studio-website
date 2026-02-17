@@ -17,7 +17,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Show first 8 items for preview, or all for full view
+  // Show subsets for preview
   const displayItems = isPreview ? GALLERY_ITEMS.slice(0, 8) : GALLERY_ITEMS;
 
   const openModal = (item: GalleryItem, index: number) => {
@@ -49,7 +49,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
             viewport={{ once: true }}
             className="text-aurum-gold font-medium tracking-widest uppercase text-sm mb-4"
           >
-            Portfolio
+            The Portfolio
           </motion.h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}

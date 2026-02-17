@@ -11,7 +11,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const CONTACT_INFO = {
   address: '425/7 Atigala Gdn Rd, Sri Jayawardenepura Kotte 10001',
   phone: '071 222 9182',
-  whatsapp: '94712229182', // For WhatsApp direct links
+  whatsapp: '94712229182',
   bookingUrl: 'https://www.fresha.com/a/aurum-studio-sri-jayawardenepura-kotte-atigala-garden-road-tvknpalf'
 };
 
@@ -78,36 +78,18 @@ export const SERVICES = [
 export const GALLERY_ITEMS: GalleryItem[] = IMAGES.GALLERY.map((url, index) => ({
   id: index,
   url,
-  alt: `Aurum Studio Total Beauty Transformation ${index + 1}`
+  alt: `Aurum Studio Transformation ${index + 1}`
 }));
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: 1,
-    title: 'Hair & Skin Trends in Sri Lanka 2024',
-    excerpt: 'Discover the most popular beauty rituals specifically curated for the tropical climate.',
-    date: 'Oct 15, 2024',
+    title: 'The Future of Total Beauty',
+    excerpt: 'Exploring modern luxury and artistic expression in Sri Lanka.',
+    date: 'Dec 2024',
     category: 'Lifestyle',
     image: IMAGES.GALLERY[0],
-    content: 'Long form content about total beauty trends...'
-  },
-  {
-    id: 2,
-    title: 'Caring for Your Skin Post-Treatment',
-    excerpt: 'How to maintain that Aurum glow after your clinical facial.',
-    date: 'Sep 28, 2024',
-    category: 'Skincare',
-    image: IMAGES.GALLERY[1],
-    content: 'Detailed tips on post-facial skincare...'
-  },
-  {
-    id: 3,
-    title: 'The Secret to Stronger Nails',
-    excerpt: 'Our nail experts share their daily routine for long-lasting gel wear.',
-    date: 'Sep 10, 2024',
-    category: 'Nails',
-    image: IMAGES.GALLERY[2],
-    content: 'Professional nail care advice...'
+    content: 'Deep dive into our studio philosophy...'
   }
 ];
 
@@ -116,21 +98,14 @@ export const GOOGLE_REVIEWS: GoogleReview[] = [
     id: 1,
     author: 'Dilshan Perera',
     rating: 5,
-    text: 'Best total beauty studio in Rajagiriya! Nilusha did an amazing job with my hair, and the skin treatment was top-notch.',
+    text: 'Best total beauty studio in Rajagiriya! Nilusha did an amazing job with my hair.',
     time: '2 days ago'
   },
   {
     id: 2,
     author: 'Amanda Silva',
     rating: 5,
-    text: 'Aurum Studio is pure luxury. It is a one-stop-shop for my hair, nails, and facials. Highly recommended!',
+    text: 'Aurum Studio is pure luxury. It is a one-stop-shop for my hair, nails, and facials.',
     time: '1 week ago'
-  },
-  {
-    id: 3,
-    author: 'Kasun Rathnayake',
-    rating: 5,
-    text: 'Great atmosphere and friendly staff. Rohan is a master beautician for both skin and nails.',
-    time: '3 weeks ago'
   }
 ];
