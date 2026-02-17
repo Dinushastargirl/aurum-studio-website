@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
+import { CONTACT_INFO } from '../constants';
 
 const ContactPreview: React.FC = () => {
   return (
@@ -39,7 +39,7 @@ const ContactPreview: React.FC = () => {
             <h4 className="text-white font-semibold text-lg">Address</h4>
             <p className="text-gray-400 font-light leading-relaxed">
               Aurum Studio,<br />
-              Rajagiriya, Sri Lanka
+              {CONTACT_INFO.address}
             </p>
           </motion.div>
 
@@ -53,11 +53,19 @@ const ContactPreview: React.FC = () => {
             <div className="w-14 h-14 bg-aurum-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
               <i className="fab fa-whatsapp text-aurum-gold text-xl"></i>
             </div>
-            <h4 className="text-white font-semibold text-lg">WhatsApp</h4>
+            <h4 className="text-white font-semibold text-lg">Contact Us</h4>
             <p className="text-gray-400 font-light leading-relaxed">
-              Contact us via WhatsApp<br />
-              for quick bookings
+              WhatsApp / Phone:<br />
+              {CONTACT_INFO.phone}
             </p>
+            <a 
+              href={`https://wa.me/${CONTACT_INFO.whatsapp}`} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block mt-2 text-aurum-gold text-xs font-bold uppercase tracking-widest border-b border-aurum-gold/30 hover:text-aurum-blue hover:border-aurum-blue transition-all"
+            >
+              Message Now
+            </a>
           </motion.div>
 
           <motion.div 

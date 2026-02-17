@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { NAV_ITEMS, IMAGES } from '../constants';
+import { NAV_ITEMS, IMAGES, CONTACT_INFO } from '../constants';
 import { Page } from '../App';
 
 interface NavbarProps {
@@ -15,7 +15,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, currentPage, onNavigate 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (id: string) => {
-    // Included 'gallery' in the whitelist to allow direct navigation
     if (['home', 'about', 'team', 'services', 'blog', 'gallery'].includes(id)) {
       onNavigate(id as Page);
     }
@@ -52,9 +51,14 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, currentPage, onNavigate 
                   )}
                 </button>
               ))}
-              <button className="bg-aurum-blue hover:bg-aurum-blue/80 text-white px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 border border-aurum-gold/20">
+              <a 
+                href={CONTACT_INFO.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-aurum-blue hover:bg-aurum-blue/80 text-white px-6 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 transform hover:scale-105 border border-aurum-gold/20"
+              >
                 Book Appointment
-              </button>
+              </a>
             </div>
           </div>
 
@@ -86,9 +90,14 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, currentPage, onNavigate 
                   {item.label}
                 </button>
               ))}
-              <button className="w-full bg-aurum-blue text-white py-4 rounded-lg text-sm font-bold tracking-widest uppercase">
+              <a 
+                href={CONTACT_INFO.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-aurum-blue text-center text-white py-4 rounded-lg text-sm font-bold tracking-widest uppercase"
+              >
                 Book Appointment
-              </button>
+              </a>
             </div>
           </motion.div>
         )}

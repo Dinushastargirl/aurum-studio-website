@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { IMAGES } from '../constants';
+import { IMAGES, CONTACT_INFO } from '../constants';
 
 const Hero: React.FC = () => {
   return (
@@ -39,12 +39,20 @@ const Hero: React.FC = () => {
               Experience world-class hair, skin, and nail care. Our experts specialize in high-end transformations tailored to your unique style.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-aurum-gold hover:bg-aurum-gold/80 text-aurum-dark px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-xl text-sm tracking-widest uppercase">
+              <a 
+                href={CONTACT_INFO.bookingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-aurum-gold hover:bg-aurum-gold/80 text-aurum-dark px-10 py-4 rounded-full font-bold transition-all duration-300 shadow-xl text-center text-sm tracking-widest uppercase"
+              >
                 Book Appointment
-              </button>
-              <button className="border border-aurum-blue hover:bg-aurum-blue/10 text-aurum-light px-10 py-4 rounded-full font-bold transition-all duration-300 text-sm tracking-widest uppercase">
+              </a>
+              <a 
+                href="#services-preview"
+                className="border border-aurum-blue hover:bg-aurum-blue/10 text-aurum-light px-10 py-4 rounded-full font-bold transition-all duration-300 text-center text-sm tracking-widest uppercase"
+              >
                 View Services
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

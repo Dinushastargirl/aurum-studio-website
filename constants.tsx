@@ -8,6 +8,20 @@ export const NAV_ITEMS: NavItem[] = [
   { id: 'blog', label: 'Blog', href: '#blog' },
 ];
 
+export const CONTACT_INFO = {
+  address: '425/7 Atigala Gdn Rd, Sri Jayawardenepura Kotte 10001',
+  phone: '071 222 9182',
+  whatsapp: '94712229182', // For WhatsApp direct links
+  bookingUrl: 'https://www.fresha.com/a/aurum-studio-sri-jayawardenepura-kotte-atigala-garden-road-tvknpalf'
+};
+
+export const SOCIAL_LINKS = {
+  tiktok: 'https://www.tiktok.com/@aurum.salon',
+  facebook: 'https://www.facebook.com/aurumltd/',
+  instagram: 'https://www.instagram.com/aurumltd/',
+  youtube: 'https://www.youtube.com/@AurumStudioRajagiriya'
+};
+
 export const IMAGES = {
   LOGO: 'https://i.ibb.co/7Tz8WwT/image.png',
   HERO: 'https://i.ibb.co/SwZsqDFb/image.png',
@@ -16,15 +30,15 @@ export const IMAGES = {
   TEAM_NILUSHA: 'https://i.ibb.co/Md8p4kY/image.png',
   TEAM_ROHAN: 'https://i.ibb.co/0pRZvdWN/image.png',
   GALLERY: [
-    'https://i.ibb.co/cXSM2FVb/image.png',
-    'https://i.ibb.co/2002jqYm/image.png',
-    'https://i.ibb.co/svH3bj1D/image.png',
-    'https://i.ibb.co/C3CY6Mys/image.png',
-    'https://i.ibb.co/WNc5nLFX/image.png',
-    'https://i.ibb.co/hRD5M5NN/image.png',
+    'https://i.ibb.co/cXSM2FV/image.png',
+    'https://i.ibb.co/2002jqY/image.png',
+    'https://i.ibb.co/svH3bj1/image.png',
+    'https://i.ibb.co/C3CY6My/image.png',
+    'https://i.ibb.co/WNc5nLF/image.png',
+    'https://i.ibb.co/hRD5M5N/image.png',
     'https://i.ibb.co/D2c1QYF/image.png',
-    'https://i.ibb.co/s9h0R6ws/image.png',
-    'https://i.ibb.co/3m5Hh6NZ/image.png',
+    'https://i.ibb.co/s9h0R6w/image.png',
+    'https://i.ibb.co/3m5Hh6N/image.png',
     'https://i.ibb.co/4cbc7Zp/image.png'
   ]
 };

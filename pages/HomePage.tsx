@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import AboutPreview from '../components/AboutPreview';
 import ServicesPreview from '../components/ServicesPreview';
+import BrandVideo from '../components/BrandVideo';
 import TeamPreview from '../components/TeamPreview';
 import Gallery from '../components/Gallery';
 import BlogPreview from '../components/BlogPreview';
@@ -31,7 +32,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate, setActiveSection }) => 
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const sections = ['hero', 'about-preview', 'services-preview', 'team-preview', 'gallery', 'reviews', 'blog-preview', 'contact-preview'];
+    const sections = ['hero', 'about-preview', 'services-preview', 'brand-video', 'team-preview', 'gallery', 'reviews', 'blog-preview', 'contact-preview'];
     sections.forEach(id => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
@@ -45,6 +46,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate, setActiveSection }) => 
       <div id="hero"><Hero /></div>
       <div id="about-preview"><AboutPreview onNavigate={onNavigate} /></div>
       <div id="services-preview"><ServicesPreview onNavigate={onNavigate} /></div>
+      <div id="brand-video"><BrandVideo /></div>
       <div id="team-preview"><TeamPreview onNavigate={onNavigate} /></div>
       <div id="gallery"><Gallery isPreview={true} onNavigate={onNavigate} /></div>
       <div id="reviews"><Reviews /></div>

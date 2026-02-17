@@ -1,5 +1,5 @@
 import React from 'react';
-import { IMAGES } from '../constants';
+import { IMAGES, CONTACT_INFO, SOCIAL_LINKS } from '../constants';
 import { Page } from '../App';
 
 interface FooterProps {
@@ -41,25 +41,29 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 {link.label}
               </button>
             ))}
-            <button 
-              onClick={() => onNavigate('services')}
+            <a 
+              href={CONTACT_INFO.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-aurum-gold hover:text-aurum-blue transition-colors text-xs uppercase tracking-[0.2em] font-bold"
             >
               Book Appointment
-            </button>
+            </a>
           </div>
 
           <div className="flex gap-8 mb-12">
             {[
-              { icon: 'facebook-f', label: 'facebook' },
-              { icon: 'instagram', label: 'instagram' },
-              { icon: 'youtube', label: 'youtube' },
-              { icon: 'tiktok', label: 'tiktok' },
-              { icon: 'whatsapp', label: 'whatsapp' }
+              { icon: 'facebook-f', url: SOCIAL_LINKS.facebook, label: 'facebook' },
+              { icon: 'instagram', url: SOCIAL_LINKS.instagram, label: 'instagram' },
+              { icon: 'youtube', url: SOCIAL_LINKS.youtube, label: 'youtube' },
+              { icon: 'tiktok', url: SOCIAL_LINKS.tiktok, label: 'tiktok' },
+              { icon: 'whatsapp', url: `https://wa.me/${CONTACT_INFO.whatsapp}`, label: 'whatsapp' }
             ].map((social) => (
               <a 
                 key={social.label}
-                href="#" 
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-aurum-blue transition-all text-xl"
                 aria-label={social.label}
               >
@@ -70,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           <div className="w-full border-t border-aurum-blue/5 pt-10 text-center">
             <p className="text-gray-600 text-[10px] tracking-[0.3em] uppercase font-bold">
-              AURUM STUDIO • Rajagiriya • Sri Lanka
+              AURUM STUDIO • {CONTACT_INFO.address.split(',')[1].trim()} • Sri Lanka
             </p>
             <p className="text-gray-700 text-[9px] mt-2 uppercase tracking-widest font-light">
               &copy; {new Date().getFullYear()} All Rights Reserved

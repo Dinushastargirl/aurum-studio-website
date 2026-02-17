@@ -17,7 +17,7 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Show only first 8 items if it's a preview
+  // Show first 8 items for preview, or all for full view
   const displayItems = isPreview ? GALLERY_ITEMS.slice(0, 8) : GALLERY_ITEMS;
 
   const openModal = (item: GalleryItem, index: number) => {
@@ -62,28 +62,28 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
           </motion.h3>
         </div>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayItems.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: index % 3 * 0.1, duration: 0.6 }}
-              className="relative group overflow-hidden rounded-2xl cursor-pointer border border-aurum-blue/10 bg-aurum-dark shadow-xl"
+              transition={{ delay: index % 4 * 0.1, duration: 0.6 }}
+              className="relative group overflow-hidden rounded-2xl cursor-pointer border border-aurum-blue/10 bg-aurum-dark shadow-xl aspect-[4/5]"
               onClick={() => openModal(item, index)}
             >
               <Image 
                 src={item.url} 
                 alt={item.alt}
-                className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-aurum-blue/60 opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center backdrop-blur-[2px]">
                 <div className="text-white text-center p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <div className="w-12 h-12 rounded-full border border-white/50 flex items-center justify-center mx-auto mb-4">
                     <i className="fas fa-plus text-xl"></i>
                   </div>
-                  <p className="font-serif text-lg tracking-widest uppercase italic">Enlarge View</p>
+                  <p className="font-serif text-sm tracking-widest uppercase italic">Enlarge View</p>
                 </div>
               </div>
             </motion.div>
