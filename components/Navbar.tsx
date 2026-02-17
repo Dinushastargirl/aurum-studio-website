@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, currentPage, onNavigate 
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <button onClick={() => handleNavClick('home')} className="flex items-center">
-              <img src={IMAGES.LOGO} alt="AURUM STUDIO" className="h-10 w-auto brightness-110" />
+              <img src={IMAGES.LOGO} alt="AURUM STUDIO" className="h-10 w-auto brightness-110 rounded-[10px]" />
             </button>
           </div>
 

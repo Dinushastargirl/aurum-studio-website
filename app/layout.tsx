@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import Script from "next/script";
+// Import React to resolve React namespace issues for ReactNode type
+import React from "react";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -18,6 +20,11 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "AURUM STUDIO | Premium Salon",
   description: "A premium luxury hair and beauty studio specializing in high-end transformations and bespoke styling. Experience modern elegance with our expert team.",
+  icons: {
+    icon: "https://i.ibb.co/7Tz8WwT/image.png",
+    shortcut: "https://i.ibb.co/7Tz8WwT/image.png",
+    apple: "https://i.ibb.co/7Tz8WwT/image.png",
+  },
 };
 
 export default function RootLayout({

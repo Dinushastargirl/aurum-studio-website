@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <img 
               src={IMAGES.LOGO} 
               alt="AURUM STUDIO" 
-              className="h-10 w-auto brightness-110" 
+              className="h-10 w-auto brightness-110 rounded-[10px]" 
               loading="lazy"
             />
           </button>

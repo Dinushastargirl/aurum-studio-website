@@ -24,7 +24,7 @@ const AboutPreview: React.FC<AboutPreviewProps> = ({ onNavigate }) => {
             <Image 
               src={IMAGES.LOGO} 
               alt="AURUM STUDIO" 
-              className="h-24 w-auto mb-4 filter drop-shadow-2xl transition-all duration-500 group-hover:brightness-125" 
+              className="h-24 w-auto mb-4 filter drop-shadow-2xl transition-all duration-500 group-hover:brightness-125 rounded-[10px]" 
               priority
             />
             <div className="h-px w-24 bg-aurum-gold mx-auto group-hover:w-32 transition-all duration-500" />
