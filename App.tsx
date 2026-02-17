@@ -8,9 +8,10 @@ import AboutPage from './pages/AboutPage';
 import TeamPage from './pages/TeamPage';
 import ServicesPage from './pages/ServicesPage';
 import BlogPage from './pages/BlogPage';
+import GalleryPage from './pages/GalleryPage';
 import CustomCursor from './components/CustomCursor';
 
-export type Page = 'home' | 'about' | 'team' | 'services' | 'blog';
+export type Page = 'home' | 'about' | 'team' | 'services' | 'blog' | 'gallery';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -46,6 +47,7 @@ const App: React.FC = () => {
         {currentPage === 'team' && <TeamPage />}
         {currentPage === 'services' && <ServicesPage />}
         {currentPage === 'blog' && <BlogPage />}
+        {currentPage === 'gallery' && <GalleryPage />}
       </main>
 
       <Footer onNavigate={navigateTo} />

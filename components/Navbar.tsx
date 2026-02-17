@@ -15,8 +15,8 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, currentPage, onNavigate 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (id: string) => {
-    // Included 'blog' in the whitelist to fix the navigation issue
-    if (['home', 'about', 'team', 'services', 'blog'].includes(id)) {
+    // Included 'gallery' in the whitelist to allow direct navigation
+    if (['home', 'about', 'team', 'services', 'blog', 'gallery'].includes(id)) {
       onNavigate(id as Page);
     }
     setIsOpen(false);

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { IMAGES } from '../constants';
 import { Page } from '../App';
@@ -31,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               { label: 'Services', id: 'services' },
               { label: 'Team', id: 'team' },
               { label: 'Blog', id: 'blog' },
-              { label: 'Gallery', id: 'home' },
+              { label: 'Gallery', id: 'gallery' },
               { label: 'Contact', id: 'home' },
             ].map((link) => (
               <button 

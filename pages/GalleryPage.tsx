@@ -3,22 +3,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { GALLERY_ITEMS } from '../constants';
-import GalleryModal from './GalleryModal';
+import GalleryModal from '../components/GalleryModal';
 import { GalleryItem } from '../types';
-import Image from './Image';
-import { Page } from '../App';
+import Image from '../components/Image';
 
-interface GalleryProps {
-  onNavigate?: (page: Page) => void;
-  isPreview?: boolean;
-}
-
-const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
+const GalleryPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Show only first 8 items if it's a preview
-  const displayItems = isPreview ? GALLERY_ITEMS.slice(0, 8) : GALLERY_ITEMS;
 
   const openModal = (item: GalleryItem, index: number) => {
     setSelectedItem(item);
@@ -40,30 +31,21 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
   };
 
   return (
-    <div className="py-24 bg-aurum-blue/5">
+    <div className="bg-aurum-dark min-h-screen py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <motion.h2 
+        <div className="text-center mb-24">
+          <motion.h1 
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-aurum-gold font-medium tracking-widest uppercase text-sm mb-4"
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-serif text-white mb-6 italic"
           >
-            Portfolio
-          </motion.h2>
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl font-serif text-white italic"
-          >
-            Artistic Transformations
-          </motion.h3>
+            The Artistry Gallery
+          </motion.h1>
+          <p className="text-aurum-gold font-bold tracking-[0.4em] uppercase text-xs">A collection of our finest transformations</p>
         </div>
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
-          {displayItems.map((item, index) => (
+          {GALLERY_ITEMS.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 30 }}
@@ -89,21 +71,6 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
             </motion.div>
           ))}
         </div>
-
-        {isPreview && onNavigate && (
-          <div className="mt-20 text-center">
-            <button 
-              onClick={() => onNavigate('gallery')}
-              className="group relative inline-flex items-center justify-center px-12 py-5 overflow-hidden font-bold tracking-[0.3em] uppercase text-xs transition-all bg-aurum-dark rounded-full text-white hover:text-aurum-gold shadow-2xl border border-aurum-blue/20"
-            >
-              <span className="relative z-10 flex items-center gap-4">
-                View Full Gallery
-                <i className="fas fa-arrow-right transition-transform group-hover:translate-x-2"></i>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-aurum-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
-          </div>
-        )}
       </div>
 
       <GalleryModal 
@@ -116,4 +83,4 @@ const Gallery: React.FC<GalleryProps> = ({ onNavigate, isPreview = false }) => {
   );
 };
 
-export default Gallery;
+export default GalleryPage;

@@ -46,7 +46,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate, setActiveSection }) => 
       <div id="about-preview"><AboutPreview onNavigate={onNavigate} /></div>
       <div id="services-preview"><ServicesPreview onNavigate={onNavigate} /></div>
       <div id="team-preview"><TeamPreview onNavigate={onNavigate} /></div>
-      <div id="gallery"><Gallery /></div>
+      <div id="gallery"><Gallery isPreview={true} onNavigate={onNavigate} /></div>
       <div id="reviews"><Reviews /></div>
       <div id="blog-preview"><BlogPreview onNavigate={onNavigate} /></div>
       <BookCTA />
